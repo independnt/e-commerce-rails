@@ -1,9 +1,9 @@
-<h2>Categories (<%= @categories.count%>)</h2>
+<h2>Categories (<%= @categories.length%>)</h2>
 
 <ul>
 <% @categories.each do |category| %>
   <li>
-    <%=category.title%> - (<%=category.products.count%> products) 
+    <%=category.title%> - (<%=category.products_count%> products)
   </li>
 <% end %>
 </ul>
