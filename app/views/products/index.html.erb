@@ -3,11 +3,11 @@
 <ol>
   <% @products.each do |product| %>
     <li>
-      <%= product.title %> ($<%= product.price %>)
+      <%= product.title %> (<%= number_to_currency product.price %>)
 
       <ul>
         <% product.product_variants.each do |variant| %>
-          <li><%= variant.title %> ($<%= variant.price %>)</li>
+          <li><%= variant.title %> (<%= number_to_currency variant.price %>)</li>
         <% end %>
       </ul>
     </li>
