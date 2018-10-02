@@ -24,10 +24,19 @@ class ShoppingCart
     order_item.quantity = quantity
 
     order_item.save
+    update_sub_total!
   end
 
   def remove_item(id:)
     order.order_items.destroy(id)
+    update_sub_total!
+  end
+
+  private
+
+  def update_sub_total!
+    order.sub_total = order.order_items.sum('quantity * price')
+    order.save
   end
 
 end
