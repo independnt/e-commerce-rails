@@ -20,4 +20,8 @@ class ShoppingCart
 
     order_item.save
   end
+
+  def remove_item(id:)
+    order.order_items.destroy(id)
+  end
 end
