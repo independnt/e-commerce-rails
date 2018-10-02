@@ -11,14 +11,16 @@
   </thead>
   <tbody>
     <% @items.each do |item| %>
-      <td><%= item.product.title %></td>
-      <td><%= number_to_currency item.price %></td>
-      <td><%= item.quantity %></td>
-      <td>
-        <%= form_for item, method: :delete do |f| %>
-        <%= f.submit "Remove" %>
-        <% end %>
-      </td>
+      <tr>
+        <td><%= item.product.title %></td>
+        <td><%= number_to_currency item.price %></td>
+        <td><%= item.quantity %></td>
+        <td>
+          <%= form_for item, method: :delete do |f| %>
+          <%= f.submit "Remove" %>
+          <% end %>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>
